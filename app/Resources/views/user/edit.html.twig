@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block body %}
+    <div class="container" style="width: 50%; margin-top: 5%;">
+        <div class ="row">
+            <div class="col-xs-12">
+                <h1>Edit</h1>
+                {{ form_start(editForm) }}
+                {{ form_row(editForm.email) }}
+                {{ form_row(editForm.username) }}
+                {{ form_row(editForm.plainPassword.first, {
+                    'label': 'Password'
+                }) }}
+                {{ form_row(editForm.plainPassword.second, {
+                    'label': 'Repeat Password'
+                }) }}
+
+                <button type="submit" class="btn btn-primary" formnovalidate>Edit</button>
+
+                {{ form_end(editForm) }}
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

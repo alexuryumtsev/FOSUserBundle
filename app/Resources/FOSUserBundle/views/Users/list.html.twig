@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test{% endblock %}
+
+{% block body %}
+
+    <table  class="table table-striped" style="width:50%;">
+        <thead>
+        <tr>
+            <td style="width: 5%;">id</td>
+            <td style="width: 10%">User name</td>
+
+        </tr>
+        </thead>
+
+        <tboby>
+            {% for users in users %}
+               <tr>
+                   <td>{{ users.id }}</td>
+                   <td>{{ users.username }}</td>
+                   <td>
+                       <a href="{{ path('user_edit', {'id': users.id}) }}"> <button class="btn btn-sm btn-primary">edit</button></a>
+                       <a href="{{ path('users_delete', {'id': users.id}) }}" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">delete</button></a>
+                   </td>
+               </tr>
+                {% endfor %}
+        </tboby>
+    </table>
+
+{% endblock %}

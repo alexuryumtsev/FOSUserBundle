@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+    <div class="container" style="width: 50%; margin-top: 5%;">
+        <div class ="row">
+            <div class="col-xs-12">
+                <h1>Registration</h1>
+                {{ form_start(regForm) }}
+                {{ form_row(regForm.login) }}
+                {{ form_row(regForm.email) }}
+                {{ form_row(regForm.username) }}
+                {{ form_row(regForm.lastname) }}
+                {{ form_row(regForm.birthday) }}
+                {{ form_row(regForm.plainPassword.first, {
+                    'label': 'Password'
+                }) }}
+                {{ form_row(regForm.plainPassword.second, {
+                    'label': 'Repeat Password'
+                }) }}
+
+                <button type="submit" class="btn btn-primary" formnovalidate>Register</button>
+
+                {{ form_end(regForm) }}
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
